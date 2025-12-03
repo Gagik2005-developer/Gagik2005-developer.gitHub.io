@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    user-select: none;
+    font-family: cinzel;
+}
+
+@font-face {
+    font-family: cinzel;
+    src: url("font/cinzel.ttf");
+}
+
+body {
+    background: black;
+    overflow: hidden !important;
+}
+
+h1 {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 987 !important;
+    color: black;
+    /* texti ezragcerov guyner */
+    -webkit-text-stroke: 1px goldenrod;
+    font-weight: 100;
+    font-size: 45px;
+    /* artacolanq, shoxk */
+    -webkit-box-reflect: below -10px linear-gradient(transparent 25%, black);
+    letter-spacing: 1.5px;
+    animation:  forH 3s linear infinite; 
+}
+
+@keyframes forH {
+    50% {
+        letter-spacing: 5px;
+    }
+}
+
+.firstPage {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition: all 1s;
+    perspective: 1000px;
+}
+
+button {
+    padding: 9px 135px;
+    cursor: pointer;
+    background: black;
+    font-size: 30px;
+    color: black;
+    -webkit-box-reflect: below 0 linear-gradient(transparent, black);
+    text-shadow: 0 0 2.5px lime, 0 0 2.5px lime;
+    box-shadow: 0 0 7px lime inset, 0 0 7px lime inset;
+    border-radius: 20px;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    animation: forBtn 20s linear infinite; 
+
+    
+}
+
+@keyframes forBtn{ 
+    10% {
+        text-shadow: 0 0 2.5px pink, 0 0 2.5px pink; box-shadow: 0 0 7px pink inset, 0 0 7px pink inset;
+    }
+    20% {
+        text-shadow: 0 0 2.5px red, 0 0 2.5px red; box-shadow: 0 0 7px red inset, 0 0 7px red inset;
+    }
+    30% {
+        text-shadow: 0 0 2.5px peru, 0 0 2.5px peru; box-shadow: 0 0 7px peru inset, 0 0 7px peru inset;
+    }
+    40% {
+        text-shadow: 0 0 2.5px lightblue, 0 0 2.5px lightblue; box-shadow: 0 0 7px lightblue inset, 0 0 7px lightblue inset;
+    }
+    50% {
+        text-shadow: 0 0 2.5px purple, 0 0 2.5px purple; box-shadow: 0 0 7px purple inset, 0 0 7px purple inset;
+    }
+    60% {
+        text-shadow: 0 0 2.5px lightcoral, 0 0 2.5px lightcoral; box-shadow: 0 0 7px lightcoral inset, 0 0 7px lightcoral inset;
+    }
+    70% {
+        text-shadow: 0 0 2.5px blue, 0 0 2.5px blue; box-shadow: 0 0 7px blue inset, 0 0 7px blue inset;
+    }
+    80% {
+        text-shadow: 0 0 2.5px indigo, 0 0 2.5px indigo; box-shadow: 0 0 7px indigo inset, 0 0 7px indigo inset;
+    }
+    90% {
+        text-shadow: 0 0 2.5px hotpink, 0 0 2.5px hotpink; box-shadow: 0 0 7px hotpink inset, 0 0 7px hotpink inset;
+    }
+    100% {
+        text-shadow: 0 0 2.5px darkgoldenrod, 0 0 2.5px darkgoldenrod; box-shadow: 0 0 7px darkgoldenrod inset, 0 0 7px darkgoldenrod inset;
+    }
+}
+
+.openClosed {
+    position: fixed;
+    bottom: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+}
+
+.beginGame {
+    transition: all 1s;
+}
+
+.rotateSlot {
+    position: fixed;
+    bottom: 150%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+    z-index: 321 !important;
+}
+
+.box {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 75px;
+    perspective: 1000px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    width: 20vh;
+    height: 15vh;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1s linear;
+}
+
+.container:nth-of-type(1) { left   : 200vh; }
+.container:nth-of-type(2) { bottom : 200vh; }
+.container:nth-of-type(3) { right  : 200vh; }
+
+.items {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: 100% 100% !important;
+    transition: all calc(var(--f) * .1s);
+}
+
+.winnerOne,
+.winnerTwo {
+    width: 800px;
+    background-size: 100% 100% !important;
+    position: fixed;
+    z-index: 798 !important;
+    border-radius: 20px;
+    transition: all 1s linear;
+    opacity: 0;
+}
+
+.winnerOne {
+    height: 500px;
+    background: url('winner/jackPoatOne.gif');
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.winnerTwo {
+    height: 150px;
+    background: url('winner/jackPoatTwo.gif');
+    right: 10px;
+}
+
+.cent {
+    width: 50px;
+    height: 50px;
+    background: url('winner/cent.gif');
+    background-size: 100% 100%;
+    position: fixed;
+    z-index: 987 !important;
+    top: -100%;
+    opacity: 0;
+    transition: all 1s linear;
+}
